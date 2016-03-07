@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Sentiment analysis</title>
 </head>
 <body>
-
+    <header>
+        <h1>Sentiment analysis of news-sources</h1>
+    </header>
+    <section>
+        <form action>
+            <label>Keywords
+            <input type="text" name="keywords"></label><br><br>
+            <label>Sources
+            <select multiple>
+                <option value="nyt">New York Times</option>
+                <option value="bbc">BBC</option>
+            </select></label><br><br>
+            <input type="submit" name="submit">
+        </form>
+    </section>
+    <footer>
+        <p>Text analysis by <a href="http://www.alchemyapi.com/">AlchemyAPI</a></p>
+    </footer>
 </body>
 </html>
