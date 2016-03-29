@@ -1,0 +1,1 @@
+https://gateway-a.watsonplatform.net/calls/data/GetNews?&apikey=b24b21443654829ad3a9598b26e64d7ed66b10b2&outputMode=json&rank=high&dedup=1&start=now-1d&end=now&count=10&q.enriched.url.text=A[Trump]&return=enriched.url.url,enriched.url.docSentiment.score
