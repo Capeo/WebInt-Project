@@ -10,11 +10,11 @@
         <h1>Sentiment analysis of news-sources</h1>
     </header>
     <section>
-        <form action="query.php" method="post">
-            <label>Keywords
+        <form action="query.php" method="post" id="userquery">
+            <label>Keywords<br>
             <input type="text" name="keywords"></label><br><br>
-            <label>Sources
-            <select multiple>
+            <label>Sources<br>
+            <select name="sources[]" form="userquery" multiple>
                 <option value="nyt">New York Times</option>
                 <option value="bbc">BBC</option>
             </select></label><br><br>

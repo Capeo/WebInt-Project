@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+
+        }
+    </style>
+</head>
+<body onresize="resize_canvas()">
+    <canvas id="myCanvas" width="810" height="340">
+    </canvas>
+    <pre id="desc"></pre>
+    <table id="myTable" style="width:100%">
+        <tr>
+            <td>Very negative</td>
+            <td>A little negative</td>
+            <td>A little positive</td>
+            <td>Very positive</td>
+        </tr>
+        <tr id="newsTable">
+            <td><pre id="vNeg"></pre></td>
+            <td><pre id="lNeg"></pre></td>
+            <td><pre id="lPos"></pre></td>
+            <td><pre id="vPos"></pre></td>
+        </tr>
+
+    </table>
+</body>
+<script>
+
+    var i = 0.32;
+    var search = "Election";
+    var pElement = document.getElementById("desc");
+    pElement.innerHTML="Search term: " + search + "\t\t\t" + "Average score: "+ i;
+
+
+    var col1 = document.getElementById("vNeg");
+    var col2 = document.getElementById("lNeg");
+    var col3 = document.getElementById("lPos");
+    var col4 = document.getElementById("vPos");
+    col1.innerHTML="New york times: -0.89" + "\n" + "BBC: -0.77";
+
+
+    function resize_canvas(){
+        var canvas = document.getElementById("myCanvas");
+        if (canvas.width  < window.innerWidth)
+        {
+            canvas.width  = window.innerWidth;
+        }
+
+        if (canvas.height < window.innerHeight)
+        {
+            canvas.height = window.innerHeight;
+        }
+
+
+        var ctx=canvas.getContext("2d");
+        var x = window.innerWidth;
+        var y = window.innerHeight/3;
+        var m = x/2;
+        ctx.canvas.width  = x;
+        ctx.canvas.height = y;
+
+
+        ctx.fillStyle="#FF0000";
+        ctx.fillRect(0,0,x/4,y);
+
+        var ctx2=canvas.getContext("2d");
+        ctx2.fillStyle="#FF9933";
+        ctx2.fillRect(x/4,0,x/2,y);
+
+        var ctx3=canvas.getContext("2d");
+        ctx3.fillStyle="#FFFF00";
+        ctx3.fillRect(x/2,0,(3*x)/4,y);
+
+        var ctx4=canvas.getContext("2d");
+        ctx4.fillStyle="#00FF00";
+        ctx4.fillRect((3*x)/4,0,x,y);
+
+        var context = canvas.getContext('2d');
+
+        context.beginPath();
+        context.moveTo(m+m*i, y);
+        context.lineTo(m+m*i, 0);
+        context.lineWidth = 5;
+
+
+
+        // set line color
+        context.strokeStyle = '#000000';
+        context.stroke();
+    }
+
+
+    window.onload = function() {
+        resize_canvas();
+        };
+</script>
+</html>
